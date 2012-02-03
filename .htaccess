@@ -1,0 +1,45 @@
+#			   _     _                _           _     
+#			  | |   (_)              | |         | |    
+#	 _ __ ___ | |__  _ _ __ ______ __| | __ _ ___| |__  
+#	| '__/ _ \| '_ \| | '_ \______/ _` |/ _` / __| '_ \ 
+#	| | | (_) | |_) | | | | |    | (_| | (_| \__ \ | | |
+#	|_|  \___/|_.__/|_|_| |_|     \__,_|\__,_|___/_| |_|
+#
+# robin-dash: Centralized Controller for Robin-Mesh networking devices
+# Copyright (C) 2010-2011 Cody Cooper.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+# 
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ErrorDocument 401 "<h1>401 Unauthorized</h1>"
+ErrorDocument 403 "<h1>403 Forbidden</h1>"
+ErrorDocument 404 "<h1>404 Not Found</h1>"
+
+RewriteEngine on
+#RewriteCond %{HTTP_HOST} !^www\.robin-dash\.net [NC]
+#RewriteRule ^(.*)$ https://www.robin-dash.net/$1 [R=301,L]
+
+RewriteRule ^network/([^/]+) checkin-batman.php?network=$1&%{QUERY_STRING} [NC]
+#RewriteRule ^edit/public-network/([^/]+) edit.php?page=public-network&captiveportal=$1&%{QUERY_STRING} [NC]
+#RewriteRule ^edit/([^/]+) edit.php?page=$1&%{QUERY_STRING} [NC]
+#RewriteRule ^edit/ edit.php [NC]
+#RewriteRule ^overview/([^/]+) overview.php?id=$1&%{QUERY_STRING} [NC]
+#RewriteRule ^overview/ overview.php [NC]
+#RewriteRule ^reset-password reset-password.php [NC]
+#RewriteRule ^create create.php [NC]
+RewriteRule ^test index.php?action=test [NC]
+
+<FilesMatch "\.(txt|xml)$">
+Order Deny,Allow
+Deny from all
+</FilesMatch>

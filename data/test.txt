@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Welcome to </title>
+		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+		<style type="text/css">
+			body{padding: 20px;background: #707883;color: #222;text-align: center;
+			font: 85% "Trebuchet MS",Arial,sans-serif}
+			h1,h2,p{margin: 0;padding: 0 10px;font-weight:normal}
+			p{padding: 0 10px 15px}
+			h1{font-size: 250%;color: #FFF;letter-spacing: 1px}
+			h2{font-size: 200%;line-height:1;color:#002455 }
+			div#container{width:550px !important; width /**/:560px;
+			margin: 0 auto;padding:5px;text-align:left;background:#FFF}
+			div#header{background: #BFDDED;padding: 10px;text-align:center}
+			div#content{float:left;width:400px;padding:10px 0;margin:5px 0;background: #778CCA}
+			div#nav{float:right;width:145px;padding:10px 0;margin:5px 0;background: #FFD154}
+			div#nav h2{font-size: 120%;color: #9E4A24}
+			div#footer{clear:both;width:550px;background: #C4E786;padding:5px 0;text-align:center}
+		</style>
+	</head>
+	<body link="#000000" text="#000000">
+		<div id="container">
+			<div id="header"><h1>Free WiFi!<br/></h1></div>
+			<div id="content">
+				<p><span style="font-size: 12pt;">Welcome to our open community WiFi network!</span></p>
+				<h2><span style="font-weight: bold;">robin-mesh Network</span></h2>
+				<br/>
+				<p><span style="font-size: 12pt;">Hi welcome to my network.</span></p>
+				<p><span style="font-size: 12pt;">Feel free to use this service for web browsing only.<br/></span></p>
+				<p><span style="font-size: 12pt;">If you would like to contact:</span></p>
+				<p><span style="font-size: 12pt;">cody@codycooper.co.nz</span></p>
+				<p><span style="font-size: 12pt;"><span style="font-style: italic;"><span style="color: rgb(255, 0, 0);">Please don't use this service for downloading <span style="font-weight: bold;">P2P files or Porn</span></span><br/></span></span></p>
+				<p><span style="font-size: 12pt;">Data and content is monitored and logged<br/></span></p>
+				<p><span style="font-size: 12pt;"><span style="color: rgb(255, 0, 0);">Users who use large amount of data will get banned.</span><br/></span></p>
+				<p><span style="font-size: 12pt;">Thanks<br/></span></p>
+			</div>
+			
+			<div id="nav">
+				<h2>Please...</h2>
+				<p><br/>We ask just a few things:&nbsp; Be respectful of others and please refrain from large uploads or downloads to keep the network fast for everyone!<br/></p>
+			</div>
+			
+			<div style="font-weight: bold;" id="footer">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+				<td>
+					<img vspace="0" align="bottom" border="0" hspace="0" src="data:image/png;base64,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" />
+				</td>
+				<td><a href=""><span style="font-size: 18pt;">Enter!</span></a>&nbsp;</td>
+				</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

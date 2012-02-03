@@ -1,0 +1,16 @@
+# WiFi-Mesh: Centralized Controller for Robin-Mesh networking devices
+# Copyright (C) 2010-2011 Cody Cooper.
+#
+# This program is NOT free software: you may not redistribute it and/or
+# modify it except using the intended built in functions.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Options +Indexes
+
+<FilesMatch "\.(txt|pdf)$">
+Order Allow,Deny
+Allow from all
+</FilesMatch>

@@ -1,0 +1,1 @@
+ip=5.164.18.52&mac=00:12:CF:A4:12:34&robin=r3767-26/nO&batman=0.5.6-r8&ssid=WiFi%20Mesh&pssid=-none-&RR=1&memfree=14424&load=0.07&memfree=14412&load=0.07&uptime=0-00&role=G&gateway=192.168.0.1&gw-qual=255&routes=192.168.0.1&hops=1&RTT=0&ass_sta=0&sta_mac=&sta_ip=&sta_hostname=&sta_rssi=&sta_dbm=&sta_stp=&users=0&kbup=0&kbdown=0&top_users=&NTR=&nbs=&rank=0&nodes=z&rssi=z

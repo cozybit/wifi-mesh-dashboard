@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /super-powers.php
+Disallow: /edit*

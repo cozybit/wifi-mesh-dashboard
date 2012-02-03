@@ -1,0 +1,268 @@
+/*
+           _     _                _           _     
+          | |   (_)              | |         | |    
+ _ __ ___ | |__  _ _ __ ______ __| | __ _ ___| |__  
+| '__/ _ \| '_ \| | '_ \______/ _` |/ _` / __| '_ \ 
+| | | (_) | |_) | | | | |    | (_| | (_| \__ \ | | |
+|_|  \___/|_.__/|_|_| |_|     \__,_|\__,_|___/_| |_|
+
+robin-dash: Centralized Controller for Robin-Mesh networking devices
+Copyright (C) 2010 Cody Cooper.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+td{text-align:center;border:0;border-width:0;border-collapse: separate;}
+
+#name {text-align:left;width:200px;border-width:0;border-style:none;}
+#data {text-align:left;width:300px;border-width:0;border-style:none;}
+#desc {text-align:left;width:500px;}
+
+#td {border-width:2;border-style:solid;width:100px;}
+#done {color:#347C17;font-weight:bold;text-align:center;font-size:20px;}
+#error {color:red;font-weight:bold;text-align:center;font-size:20px;}
+
+td.gateway {width:40px;font-size:22px;font-weight:bold;background:#01DF01;}
+td.repeater {width:40px;font-size:22px;font-weight:bold;background:#ACFA58;}
+td.offline {width:40px;font-size:22px;font-weight:bold;background:#D8D8D8;}
+
+
+th {background: lightgrey;}
+html{width:100%;height:100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0; padding:0}
+table{border-collapse:collapse; border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,th,var{font-style:normal; font-weight:normal}
+li{list-style:none}
+caption,th{text-align:center}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+q:before,q:after{content:''}
+abbr,acronym{border:0; font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit; font-size:inherit; font-weight:inherit}
+input,textarea,select{font-size:100%}
+legend{color:#000}
+del,ins{text-decoration:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
+.clearfix {display: inline-block;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+
+a { color: #ff5003; text-decoration: none; }
+a:hover { color: #ff5d15; }
+
+body { font-family: 'Calibri', Arial, sans-serif; font-size: 1em; text-align: left; color: #111; background: #eee; padding: 0; margin: 0; }
+
+h1, h2, h3, h4, h5 { display: block; padding: 0; margin: 0 0 10px; clear: both; }
+h1 { font-size: 2.6em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.2em; }
+
+h1.nospacing, h2.nospacing, h3.nospacing, h4.nospacing, h5.nospacing { margin-bottom: 0px; }
+
+hr { border: 1px dotted #ccc; margin: 15px 0; clear: both; }
+
+img { border: 0; padding: 0; margin: 10px 0 10px; }
+img.left { float: left; margin: 10px 12px 10px 0; }
+img.right { float: right; margin: 10px 0 10px 12px; }
+
+p { display: block; margin: 0 0 15px; }
+
+small { font-size: .6em; }
+
+/* Wrapper */
+#wrapper { width: 100%; text-align: left; margin: 0 auto; clear: both; }
+
+/* Header */
+#header { height: 100px; padding-left: 14%; clear: both; }
+#logo { font-size: 5em; font-weight: bold; }
+
+/* Navigation */
+#top-nav { height: 25px; color: #ffffff; background: #000; padding: 5px 0; margin: 0; clear: both; }
+#nav { list-style: none; margin: 10px 0 15px; clear: both; }
+#nav li { display: block; list-style: none; padding: 3px 0; margin: 0; }
+
+/* Content */
+#content { width: 92%; padding: 0; margin: 0; clear: both; }
+#content #page-content { width: 85%; float: right; }
+#sidebar { width: 10%; min-height: 350px; float: left; }
+#center { text-align: left; }
+
+/* Login Panel */
+#login-panel { display: block; width: 380px; background-color: transparent; padding: 0 0 50px; margin: 5% 30% 0; clear: both; }
+#login-panel h1 { float: none; text-align: center; margin: 0 auto 8px; }
+#login-panel h2,
+#login-panel h3,
+#login-panel h4 { text-align: center; }
+
+#login-panel #page-content { background: #fff; border: 1px solid #bbb; padding: 30px; -moz-border-radius: 7px; -webkit-border-radius: 7px; -moz-box-shadow: 0 0 9px #ccc; -webkit-box-shadow: 0 0 9px #ccc; box-shadow: 0 0 9px #ccc;
+/* For IE 8 */	/* -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')"; */
+/* For IE 5.5 - 7 */	/* filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000'); */
+}
+
+/* Form */
+label { display: block; font-weight: bold; padding: 0 0 4px; }
+
+input[type=text], 
+input[type=email], 
+input[type=password], 
+input[type=checkbox], 
+textarea,
+select { display: block; width: 100%; border: 1px solid #ddd; padding: 6px; margin: 0 0 15px; -moz-border-radius: 5px; -webkit-border-radius: 5px; /* background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fafafa)); background: -moz-linear-gradient(top, #fff, #fafafa); */
+/* For Internet Explorer 5.5 - 7 */ /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF0000FF, endColorstr=#FFFFFFFF); */
+/* For Internet Explorer 8 */ /* -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF0000FF, endColorstr=#FFFFFFFF)"; */
+}
+
+input[type=text]:focus, 
+input[type=password]:focus, 
+textarea:focus,
+select:focus { border-color: #aaa; }
+
+input[type=submit],
+input[type=button],
+button { min-width: 120px; color: #fff; background: #222; border: none; padding: 8px 14px; margin: 0 0 15px;  -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+
+#recaptcha { display: block; margin: 0 0 12px; }
+
+
+
+
+
+
+
+/*
+   modalbox.css
+   
+   Modalbox project
+   
+   Created by Andrew Okonetchnikov.
+   Copyright 2006-2010 okonet.ru. All rights reserved.
+   
+   Licensed under MIT license.
+*/
+
+#MB_overlay {
+	position: absolute;
+	margin: auto;
+	top: 0;	left: 0;
+	width: 100%; height: 100%;
+	z-index: 9999;
+	border: 0;
+	background-color: #000!important;
+}
+#MB_overlay[id] { position: fixed; }
+
+#MB_windowwrapper {
+	position:absolute;
+	top:0;
+	width:100%;
+}
+
+#MB_window {
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	top:0;
+	left:0;
+	border: 0 solid;
+	text-align: left;
+	z-index: 10000;
+}
+#MB_window[id] { position: relative; }
+
+#MB_frame {
+	position: relative;
+	background-color: #EFEFEF;
+	height: 100%;
+}
+
+#MB_header {
+	margin: 0;
+	padding: 0;
+}
+
+#MB_content {
+	position: relative;
+	padding: 6px .75em;
+	overflow: auto;
+}
+
+#MB_caption {
+	font: bold 100% "Lucida Grande", Arial, sans-serif;
+	text-shadow: #FFF 0 1px 0;
+	padding: .5em 2em .5em .75em;
+	margin: 0;
+	text-align: left;
+}
+
+#MB_close {
+	display: block;
+	position: absolute;
+	right: 5px; top: 4px;
+	padding: 2px 3px;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 13px;
+}
+#MB_close:hover {
+	background: transparent;
+}
+
+#MB_loading {
+	padding: 1.5em;
+	text-indent: -10000px;
+	background: transparent url(spinner.gif) 50% 0 no-repeat;
+}
+
+/* Color scheme */
+#MB_window {
+	background-color: #EFEFEF;
+	color: #000;
+	
+	-webkit-box-shadow: 0 0 64px #000; 
+	-moz-box-shadow: #000 0 0 64px; 
+	box-shadow: 0 0 64px #000;
+}
+	#MB_frame {
+		padding-bottom: 4px;
+		
+		-webkit-border-bottom-left-radius: 4px;
+		-webkit-border-bottom-right-radius: 4px;
+
+		-moz-border-radius-bottomleft: 4px;
+		-moz-border-radius-bottomright: 4px;
+
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+	
+	#MB_content { border-top: 1px solid #F9F9F9; }
+
+	#MB_header {
+	  background-color: #DDD;
+	  border-bottom: 1px solid #CCC;
+	}
+		#MB_caption { color: #000 }
+		#MB_close { color: #777 }
+		#MB_close:hover { color: #000 }
+
+
+/* Alert message */
+.MB_alert {
+	margin: 10px 0;
+	text-align: center;
+}
